@@ -9,16 +9,21 @@
 </head>
 <body>
     
-    <div>
-        <h1>Number Guessing Game</h1>
-        <input type="text" id="playerName" placeholder="Enter player name">
-        <input type="number" id="playerGuess" placeholder="Enter your guess">
-        <button onclick="guessNumber()">Show result</button>
-        <button></button>
-        <p id="result"></p>
-        <p></p>
+    <div class="">
+        <h1 class="text-2xl my-3 text-center">Number Guessing Game</h1>
+        <div class="flex justify-center gap-2 my-10">
+            <input class="p-3 border-2" type="text" id="playerName" placeholder="Enter player name">
+            <input class="p-3 border-2" type="number" id="playerGuess" placeholder="Enter your guess">
+            <button class="p-3 border-2" onclick="guessNumber()">Show result</button>
+            <button></button>
+            <p id="result"></p>
+            <p></p>
+        </div>
     </div>
 
+    <p id="factorial"></p>
+
     <script src="index.js"></script>
+    <script src="factorial.js"></script>
 </body>
 </html>
