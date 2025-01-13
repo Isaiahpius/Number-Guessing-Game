@@ -14,6 +14,9 @@ function guessNumber() {
     const resultElement = document.getElementById("result")
 
     
+    if (!playerName) {
+        resultElement.textContent = "Enter a valid name"
+    }
 
     if (!playerName || isNaN(playerGuess)) {
         resultElement.textContent = "Enter a valid name and number"
