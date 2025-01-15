@@ -5,7 +5,7 @@ let winner = null
 //     const resultElement = targetNumber[i];
     
 // }
-let result = [12, 67, 80, 40, 23, 9, 100, 2, 0, 30];
+// let result = [12, 67, 80, 40, 23, 9, 100, 2, 0, 30];
 
 
 function guessNumber() {
@@ -14,11 +14,12 @@ function guessNumber() {
     const resultElement = document.getElementById("result")
 
     
-    if (!playerName) {
-        resultElement.textContent = "Enter a valid name"
-    }
+    // if (!playerName) {
+    //     resultElement.textContent = "Enter a valid name"
+    //     return
+    // }
 
-    if (!playerName || isNaN(playerGuess)) {
+    if (!playerName && !playerName || isNaN(playerGuess)) {
         resultElement.textContent = "Enter a valid name and number"
         return
     }
