@@ -1,21 +1,36 @@
-let file = getWeatherData("https://api.openweathermap.org/data/3.0/onecall?lat=33.44&lon=-94.04&exclude=hourly,daily&appid={3fef7f09e3d16a2d67ba169848bd7e6f}", {
-    method: 'GET'
-})
-.then(weatherData => {
-    if (!weatherData.ok) {
-        throw `error: invalid`
-    }
-})
+let file = getWeatherData("https://api.openweathermap.org/data/3.0/onecall?lat=3.2465119654380126&lon=6.608863426373867&exclude=hourly,daily&appid=3fef7f09e3d16a2d67ba169848bd7e6f")
+// .then(weatherData => {
+//     if (!weatherData.ok) {
+//         throw `error: invalid`
+//     }
+// })
 
-async function getWeatherData(file) {
+async function getWeatherData() {
+    const city = document.getElementById("cityInput").value
+    if (!city) {
+        alert("Enter a city name")
+        return
+    }
+
     try {
         const weatherData = await fetch(file);
         const data = await weatherData.json();
-        return data;
+        displayCurrentWeather(data);
     } catch (error) {
         console.error("Error fetching weather data:", error);
         return null;
     }
+}
+
+function displayCurrentWeather(data) {
+    const weatherBody = document.getElementById('weatherBody');
+    weatherBody.innerHTML = `
+        <tr>
+            <td>${data.name}</td>
+            <td>${data.main.temp}°C</td>
+            <td>${data.weather[0].description}</td>
+        </tr>
+    `;
 }
 
 
@@ -27,6 +42,13 @@ async function getWeatherData(file) {
 // let weatherData = await fetch(file)
 // let myWeatherData = await weatherData.json()
 // console.log(myWeatherData)
+
+// let location = {
+//     longitude: 6.608863426373867,
+//     latitude: 3.2465119654380126
+// }
+
+// 6.608863426373867, 3.2465119654380126
 
 // fetch(file)
 // .then(x => x.text())

@@ -24,9 +24,25 @@
     <p id="factorial"></p>
 
 
-    <div>
-        
+    <div class="max-w-3xl w-full mx-auto text-center">
+        <div class="flex justify-center gap-4 mb-5"></div>
+            <input type="text" class="p-3 border-2" id="cityInput" placeholder="Enter city name" />
+            <button class="border-2 p-3" onclick="getWeather()">Get Weather</button>
+        </div>
+
+        <table id="weatherTable" class="flex justify-center gap-4">
+            <thead>
+                <tr class="flex justify-center gap-6">
+                    <th>City</th>
+                    <th>Temperature</th>
+                    <th>Condition</th>
+                </tr>
+            </thead>
+            <tbody id="weatherBody"></tbody>
+        </table>
     </div>
+
+
 
     <script src="index.js"></script>
     <script src="factorial.js"></script>
